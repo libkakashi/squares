@@ -28,9 +28,9 @@ const GuessGame = () => {
 
   useEffect(() => {
     if (result.startsWith('Correct')) {
-      document.body.style.backgroundColor = '#b7eb8f';
+      document.body.style.backgroundColor = 'rgb(135, 208, 104)';
     } else {
-      document.body.style.backgroundColor = '#ffa39e';
+      document.body.style.backgroundColor = 'rgb(255, 85, 0)';
     }
   }, [result]);
 
@@ -81,10 +81,12 @@ const GuessGame = () => {
           }}
         />
         <Divider />
-        <Alert
-          message={result}
-          type={result.startsWith('Correct') ? 'success' : 'error'}
-        />
+        {result && (
+          <Alert
+            message={result}
+            type={result.startsWith('Correct') ? 'success' : 'error'}
+          />
+        )}
       </Col>
     </Row>
   );
