@@ -27,9 +27,9 @@ const GuessGame = () => {
   }, []);
 
   useEffect(() => {
-    if (result.startsWith('Correct')) {
+    if (!result || result.startsWith('Correct')) {
       document.body.style.backgroundColor = 'rgb(135, 208, 104)';
-    } else if (result) {
+    } else {
       document.body.style.backgroundColor = 'rgb(255, 85, 0)';
     }
   }, [result]);
